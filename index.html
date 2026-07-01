@@ -71,6 +71,18 @@
   .card h4{margin:0 0 6px; font-size:1rem; color:var(--gold);}
   .card p{margin:0; font-size:.92rem; color:#463f34;}
 
+  /* preview expandable cards */
+  .phint{font-size:.82rem; color:var(--sub); margin:2px 0 12px;}
+  .pcard{background:#fff; border:1px solid var(--line); border-radius:11px; margin:10px 0; overflow:hidden;}
+  .pcard>summary{list-style:none; cursor:pointer; padding:14px 17px; font-weight:700; color:var(--gold);
+    display:flex; align-items:center; justify-content:space-between; font-size:1.02rem;}
+  .pcard>summary::-webkit-details-marker{display:none;}
+  .pcard>summary::after{content:"+"; color:var(--sub); font-weight:700; font-size:1.2rem; line-height:1;}
+  .pcard[open]>summary::after{content:"\2212";}
+  .pcard[open]>summary{border-bottom:1px solid var(--line);}
+  .pcard .body{padding:13px 17px 15px; font-size:.93rem; color:#463f34; line-height:1.66;}
+  .pcard .body .k{color:var(--book); font-weight:700;}
+
   /* tasks */
   .tasks{counter-reset:t; list-style:none; padding:0; margin:14px 0 0;}
   .tasks li{counter-increment:t; position:relative; padding:12px 16px 12px 52px; margin:9px 0;
@@ -237,15 +249,29 @@
   <section>
     <div class="chap-head"><span class="chap-no">다음 범위</span><h2>미리보기 · 5~11장</h2></div>
     <p style="color:var(--sub); font-size:.92rem; margin:14px 0 2px;">다음 모임까지 <strong>남은 부분(5~11장)을 전부 읽어 오기</strong>. 아래는 각 장 제목으로 그려 본 <strong>예고(주제 스케치)</strong> — 책의 일관된 틀(<em>몸이 영혼을 가르친다 · 습관은 작은 전례 · 몸은 선물이자 한계</em>)을 대입한 것입니다.</p>
-    <div class="grid">
-      <div class="card"><h4>5장 · 고통</h4><p>아프고 약해지는 몸을 어떻게 살아 낼 것인가. 고통 중에도 몸으로 드리는 예배.</p></div>
-      <div class="card"><h4>6장 · 운동</h4><p>몸을 움직이는 것의 영성. 노동·활동을 하나님의 형상으로 사는 통로로.</p></div>
-      <div class="card"><h4>7장 · 성(性)</h4><p>몸으로서의 성, 결혼·독신·정결. 몸을 귀히 여김이 성 윤리로 이어지는 지점.</p></div>
-      <div class="card"><h4>8장 · 기술</h4><p>스마트폰·화면 시대에 몸의 자리. '손안의 광야' 자료와 직결.</p></div>
-      <div class="card"><h4>9장 · 예배</h4><p>몸으로 드리는 예배, 성찬·세례 같은 물질적 은혜의 수단. 이번 성찬 나눔의 연장선.</p></div>
-      <div class="card"><h4>10장 · 죽음</h4><p>죽어 가는 몸, 유한성의 마지막 대면. 연명치료·존엄 물음과 연결.</p></div>
-      <div class="card"><h4>11장 · 부활</h4><p>몸의 부활 소망(고전 15장). '부활한 몸의 소망'으로 매듭.</p></div>
-    </div>
+    <p class="phint">▸ 각 장을 눌러 핵심정리를 펼쳐 보세요.</p>
+
+    <details class="pcard"><summary>5장 · 고통</summary>
+      <div class="body"><span class="k">핵심.</span> 고통은 없애야 할 오류가 아니라 몸이 유한함을 배우는 학교다. 병과 약함 속에서도 몸으로 하나님을 신뢰하고 예배하는 법을 다룬다. 이번 나눔의 "질서가 깨져 병이 온다 → 질서 회복을 구하는 기도"와 이어진다 — 회복을 구하되, 고통 한복판에도 임재하시는 하나님을 붙드는 것.</div>
+    </details>
+    <details class="pcard"><summary>6장 · 운동</summary>
+      <div class="body"><span class="k">핵심.</span> 몸을 움직이는 것 자체가 영적 훈련이다. 걷기·노동·활동은 하나님의 형상으로 세상을 다스리라는 부름의 일부. 앉아만 있는 삶에서 벗어나 몸을 다시 쓰는 것이 곧 예배가 된다.</div>
+    </details>
+    <details class="pcard"><summary>7장 · 성(性)</summary>
+      <div class="body"><span class="k">핵심.</span> 성(性)은 몸의 언어다. 결혼·독신·정결 모두 몸으로 드리는 헌신. 몸을 귀히 여기는 신학이 성 윤리의 토대가 된다 — 소비·쾌락이 아니라 언약과 절제의 자리.</div>
+    </details>
+    <details class="pcard"><summary>8장 · 기술</summary>
+      <div class="body"><span class="k">핵심.</span> 스마트폰·화면은 우리 몸의 습관을 다시 짠다. 화면에 붙들린 몸을 실재(사람·창조·예배)로 되돌리는 훈련. '손안의 광야' — 알고리즘 시대에 몸을 어디에 두느냐의 문제.</div>
+    </details>
+    <details class="pcard"><summary>9장 · 예배</summary>
+      <div class="body"><span class="k">핵심.</span> 예배는 머리가 아니라 온몸으로 드린다. 서고 앉고 무릎 꿇고 먹고 마시는 것(성찬·세례)이 곧 물질적 은혜의 수단. 몸의 반복(전례)이 마음을 빚는다 — 이번 성찬 나눔의 연장선.</div>
+    </details>
+    <details class="pcard"><summary>10장 · 죽음</summary>
+      <div class="body"><span class="k">핵심.</span> 죽어 가는 몸은 유한성의 마지막 대면이다. 죽음을 부정하는 문화 대신, 몸의 끝을 정직하게 받아들이고 부활을 바라보는 태도. 연명·존엄의 물음과 맞닿는다.</div>
+    </details>
+    <details class="pcard"><summary>11장 · 부활</summary>
+      <div class="body"><span class="k">핵심.</span> 기독교 소망의 절정은 영혼의 탈출이 아니라 <strong>몸의 부활</strong>(고전 15장). 지금 이 몸을 귀히 여기는 이유가 여기 있다 — 썩을 이 몸이 썩지 않을 것으로 다시 살아난다. 책 전체의 매듭.</div>
+    </details>
   </section>
 
   <!-- 실천 과제 -->
@@ -259,7 +285,7 @@
     </ol>
     <div class="next">
       <h4>▶ 다음 범위</h4>
-      <p><strong>남은 부분(5~11장) 전체 완독</strong> · 8개 교단 <strong>성찬 비교 자료</strong> 함께 읽기</p>
+      <p><strong>남은 부분(5~11장) 전체 완독</strong></p>
     </div>
   </section>
 
